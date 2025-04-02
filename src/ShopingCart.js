@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { changeAmount, removeCart } from "./ShopSlice";
 
 export default function ShopingCart() {
-    const dispatch = useDispatch();
+    const dispatch = useDispatch(); //selector안에서 filter, map쓰면 작동은 안되는데 오류메세지가 나와서 불편해서 분리
     const products = useSelector(state => state.shop.products);
     const addedproduct = products.filter(p => p.added);
     const productsList = addedproduct.map(p =>
